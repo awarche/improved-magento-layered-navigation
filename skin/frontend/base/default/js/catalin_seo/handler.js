@@ -27,7 +27,7 @@ var CatalinSeoHandler = {
         } else if (el.tagName.toLowerCase() === 'a') {
             url = $(el).readAttribute('href');
         } else if (el.tagName.toLowerCase() === 'select' || el.tagName.toLowerCase() === 'input') {
-            url = $(el).getValue();
+            url = el.value;
         }
 
         if ($j(el).hasClass('no-ajax')) {
@@ -66,7 +66,7 @@ var CatalinSeoHandler = {
                     self.alignProductGridActions();
                     self.blockCollapsing();
 
-                    if (ConfigurableSwatchesList) {
+                    if (typeof ConfigurableSwatchesList !== 'undefined') {
                         setTimeout(function(){
                             $j(document).trigger('product-media-loaded');
                         }, 0);
@@ -173,7 +173,7 @@ var CatalinSeoHandler = {
                         self.alignProductGridActions();
                         self.blockCollapsing();
 
-                        if (ConfigurableSwatchesList) {
+                        if (typeof ConfigurableSwatchesList !== 'undefined') {
                             setTimeout(function(){
                                 $j(document).trigger('product-media-loaded');
                             }, 0);
